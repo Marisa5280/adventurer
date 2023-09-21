@@ -9,6 +9,7 @@ function CharacterWrapper({ endpoints }) {
       {/* <fav button></fav> */}
       {/* //detail components */}
       <Race endpoint={endpoints.races} />
+      <Class endpoint={endpoints.classes} />
     </div>
   );
 }
