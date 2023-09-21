@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getPromise } from "./apiCalls";
+import CharacterWrapper from "./Components/CharacterWrapper/CharacterWrapper";
 import Race from "./Components/Race/Race";
 import "./App.css";
 
@@ -20,8 +21,7 @@ function App() {
       </header>
       {endpoints ? (
         <>
-          <Race endpoint={endpoints.races} />
-          {/* rest of comps go here */}
+          <CharacterWrapper endpoints={endpoints} />
         </>
       ) : (
         false
