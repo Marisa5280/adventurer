@@ -29,7 +29,7 @@ function CharacterWrapper({ endpoints }) {
       {/* <fav button></fav> */}
       {/* //detail components */}
       <Race endpoint={endpoints.races} />
-      {classData && <Class  classData={classData} />}
+      {classData && <Class classData={classData} />}
     </div>
   );
 }
