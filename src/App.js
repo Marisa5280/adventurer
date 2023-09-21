@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { getPromise } from "./apiCalls";
+import Race from "./Components/Race/Race";
+import "./App.css";
 
 function App() {
+  const [endpoints, setEndpoints] = useState();
+
+  useEffect(() => {
+    getPromise().then((data) => {
+      console.log("data:", data);
+      setEndpoints(data);
+    });
+  }, []);
+
   return (
-    <div className="App">
+    <main className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="title">Adventurer Alchemist</h1>
       </header>
-    </div>
+      {endpoints ? (
+        <>
+          <Race endpoint={endpoints.races} />
+          {/* rest of comps go here */}
+        </>
+      ) : (
+        false
+      )}
+    </main>
   );
 }
 
