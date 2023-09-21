@@ -25,7 +25,7 @@ function Race({ endpoint }) {
       <h2 className="race-title">Race: {race.name}</h2>
       <ul className="race-details">
         <li className="race-age">Age: {race.age}</li>
-        <li className="race-size">Size: {race.size_desc}</li>
+        <li className="race-size">Size: {race.size_description}</li>
         <li className="race-speed">Speed: {race.speed}</li>
         <li className="race-languages">Languages: {race.language_desc}</li>
       </ul>
