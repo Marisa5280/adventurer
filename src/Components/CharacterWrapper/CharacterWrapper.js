@@ -1,5 +1,6 @@
 // import all components that go in wrapper, css, error comp
 import Race from "../Race/Race";
+import Class from "../Class/Class";
 
 // Comp function // pass props?
 function CharacterWrapper({ endpoints }) {
