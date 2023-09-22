@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { getPromise } from "../../apiCalls";
 
-function Race({ race }) {
-  // const [raceEndpoint, setRaceEndpoint] = useState([]);
-  // const [race, setRace] = useState([]);
+function Race({ race, setRace, endpoint}) {
+  const [raceEndpoint, setRaceEndpoint] = useState([]);
 
-  // useEffect(() => {
-  //   getPromise(endpoint).then((data) => {
-  //     const randomIndex = Math.floor(Math.random() * data.results.length);
-  //     console.log("races data:", data.results[randomIndex]);
-  //     setRaceEndpoint(data.results[randomIndex]);
-  //   });
-  // }, []);
+  useEffect(() => {
+    getPromise(endpoint).then((data) => {
+      const randomIndex = Math.floor(Math.random() * data.results.length);
+      console.log("races data:", data.results[randomIndex]);
+      setRaceEndpoint(data.results[randomIndex]);
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   getPromise(raceEndpoint.url).then((currentRaceData) => {
-  //     console.log("currentRaceData", currentRaceData);
-  //     setRace(currentRaceData);
-  //   });
-  // }, [raceEndpoint]);
+  useEffect(() => {
+    getPromise(raceEndpoint.url).then((currentRaceData) => {
+      console.log("currentRaceData", currentRaceData);
+      setRace(currentRaceData);
+    });
+  }, [raceEndpoint]);
 
   return (
     <div className="race-container">
