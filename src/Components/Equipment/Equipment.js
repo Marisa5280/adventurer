@@ -1,16 +1,7 @@
-
 function Equipment({ classData }) {
   const startingEquipment = classData["starting_equipment"];
-  const startingEquipmentOptions = classData["starting_equipment_options"]
-  startingEquipmentOptions?.forEach((option) => {
-    // const randomIndex = Math.floor(Math.random() * option.from.options.length);
-    console.log('options', option);
-    // {<li
-    //   key={equip.equipment.index}
-    // >{`${equip.equipment.name}, Quantity: ${equip.quantity}`}</li>}
-  })
-  // for each option: Math.floor(Math.random() * option.options.length)
-  // console.log('StateEq', equipmentData)
+  const startingEquipmentOptions = classData["starting_equipment_options"];
+
   return (
     <div className="equipment-container">
       <h2 className="equipment-title">Equipment:</h2>
@@ -20,6 +11,15 @@ function Equipment({ classData }) {
             key={equip.equipment.index}
           >{`${equip.equipment.name}, Quantity: ${equip.quantity}`}</li>
         ))}
+      </ul>
+      <h3 className="equipment-options-title">Options:</h3>
+      <ul className="equipment-options-details">
+        {startingEquipmentOptions?.forEach((option, index) => {
+          console.log("options", `Choose ${option.choose}: ${option.desc}`);
+          {
+            <li key={index}>{`Choose ${option.choose}: ${option.desc}`}</li>;
+          }
+        })}
       </ul>
     </div>
   );

@@ -26,22 +26,14 @@ function CharacterWrapper({ endpoints }) {
   }, []);
 
   useEffect(() => {
-    getPromise(classEndpoint.url).then((currentClassData) => {
+    classEndpoint.url && getPromise(classEndpoint.url).then((currentClassData) => {
       console.log("currentClassData", currentClassData);
       setClassData(currentClassData);
     });
   }, [classEndpoint]);
 
-  // useEffect(() => {
-  //   getPromise(endpoints.races).then((data) => {
-  //     const randomIndex = Math.floor(Math.random() * data.results.length);
-  //     console.log("races data:", data.results[randomIndex]);
-  //     setRaceEndpoint(data.results[randomIndex]);
-  //   });
-  // }, []);
-
   useEffect(() => {
-    getPromise(raceEndpoint.url).then((currentRaceData) => {
+    raceEndpoint.url && getPromise(raceEndpoint.url).then((currentRaceData) => {
       console.log("currentRaceData", currentRaceData);
       setRace(currentRaceData);
     });
