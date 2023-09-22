@@ -18,6 +18,11 @@ function CharacterWrapper({ endpoints }) {
       console.log("Classs data:", data.results[randomIndex]);
       setClassEndpoint(data.results[randomIndex]);
     });
+    getPromise(endpoints.races).then((data) => {
+      const randomIndex = Math.floor(Math.random() * data.results.length);
+      console.log("races data:", data.results[randomIndex]);
+      setRaceEndpoint(data.results[randomIndex]);
+    });
   }, []);
 
   useEffect(() => {
@@ -27,13 +32,13 @@ function CharacterWrapper({ endpoints }) {
     });
   }, [classEndpoint]);
 
-  useEffect(() => {
-    getPromise(endpoints.races).then((data) => {
-      const randomIndex = Math.floor(Math.random() * data.results.length);
-      console.log("races data:", data.results[randomIndex]);
-      setRaceEndpoint(data.results[randomIndex]);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getPromise(endpoints.races).then((data) => {
+  //     const randomIndex = Math.floor(Math.random() * data.results.length);
+  //     console.log("races data:", data.results[randomIndex]);
+  //     setRaceEndpoint(data.results[randomIndex]);
+  //   });
+  // }, []);
 
   useEffect(() => {
     getPromise(raceEndpoint.url).then((currentRaceData) => {
@@ -41,12 +46,13 @@ function CharacterWrapper({ endpoints }) {
       setRace(currentRaceData);
     });
   }, [raceEndpoint]);
+  console.log('race', race)
 
   return (
     <div>
       {/* <fav button></fav> */}
       {/* //detail components */}
-      {race && <Race raceData={race} />}
+      {race && <Race race={race} />}
       {classData && <Class classData={classData} />}
       {classData && <Equipment classData={classData} />}
     </div>

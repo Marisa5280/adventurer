@@ -1,11 +1,14 @@
-// import { useState } from "react";
 
 function Equipment({ classData }) {
   const startingEquipment = classData["starting_equipment"];
-
-  //class data props? : equipment
-  // .starting_equipment
-  // .starting_equipment_options.(forEach?)/(math.random),
+  const startingEquipmentOptions = classData["starting_equipment_options"]
+  startingEquipmentOptions?.forEach((option) => {
+    // const randomIndex = Math.floor(Math.random() * option.from.options.length);
+    console.log('options', option);
+    // {<li
+    //   key={equip.equipment.index}
+    // >{`${equip.equipment.name}, Quantity: ${equip.quantity}`}</li>}
+  })
   // for each option: Math.floor(Math.random() * option.options.length)
   // console.log('StateEq', equipmentData)
   return (
