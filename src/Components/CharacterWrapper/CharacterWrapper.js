@@ -4,6 +4,7 @@ import { getPromise } from "../../apiCalls";
 import Race from "../Race/Race";
 import Class from "../Class/Class";
 import Equipment from "../Equipment/Equipment";
+import Alignment from "../Alignment/Alignment";
 
 // Comp function // pass props?
 function CharacterWrapper({ endpoints }) {
@@ -47,6 +48,7 @@ function CharacterWrapper({ endpoints }) {
       {race && <Race race={race} />}
       {classData && <Class classData={classData} />}
       {classData && <Equipment classData={classData} />}
+      {race && <Alignment race={race} />}
     </div>
   );
 }
