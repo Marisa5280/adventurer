@@ -3,11 +3,14 @@ import React, { useEffect, useState } from "react";
 import { getPromise } from "../../apiCalls";
 import Race from "../Race/Race";
 import Class from "../Class/Class";
+import Equipment from "../Equipment/Equipment";
 
 // Comp function // pass props?
 function CharacterWrapper({ endpoints }) {
   const [classEndpoint, setClassEndpoint] = useState([]);
   const [classData, setClassData] = useState([]);
+  const [raceEndpoint, setRaceEndpoint] = useState([]);
+  const [race, setRace] = useState([]);
 
   useEffect(() => {
     getPromise(endpoints.classes).then((data) => {
@@ -24,12 +27,28 @@ function CharacterWrapper({ endpoints }) {
     });
   }, [classEndpoint]);
 
+  useEffect(() => {
+    getPromise(endpoints.races).then((data) => {
+      const randomIndex = Math.floor(Math.random() * data.results.length);
+      console.log("races data:", data.results[randomIndex]);
+      setRaceEndpoint(data.results[randomIndex]);
+    });
+  }, []);
+
+  useEffect(() => {
+    getPromise(raceEndpoint.url).then((currentRaceData) => {
+      console.log("currentRaceData", currentRaceData);
+      setRace(currentRaceData);
+    });
+  }, [raceEndpoint]);
+
   return (
     <div>
       {/* <fav button></fav> */}
       {/* //detail components */}
-      <Race endpoint={endpoints.races} />
+      {race && <Race raceData={race} />}
       {classData && <Class classData={classData} />}
+      {classData && <Equipment classData={classData} />}
     </div>
   );
 }
