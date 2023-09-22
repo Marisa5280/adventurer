@@ -14,16 +14,9 @@ function Equipment({ classData }) {
       </ul>
       <h3 className="equipment-options-title">Options:</h3>
       <ul className="equipment-options-details">
-        {/* {startingEquipmentOptions?.forEach((option, index) => (
+        {startingEquipmentOptions?.map((option, index) => (
           <li key={index}>{`Choose ${option.choose}: ${option.desc}`}</li>
-        ))} */}
-        {/* console logging but not rendering🤬 */}
-        {startingEquipmentOptions?.forEach((option, index) => {
-          console.log("options", `Choose ${option.choose}: ${option.desc}`);
-          {
-            <li key={index}>{`Choose ${option.choose}: ${option.desc}`}</li>;
-          }
-        })}
+        ))}
       </ul>
     </div>
   );
