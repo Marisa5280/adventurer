@@ -9,13 +9,23 @@ import Background from "../Background/Background";
 import "./CharacterWrapper.css";
 import AbilityScores from "../AbilityScores/AbilityScores";
 
-function CharacterWrapper({ endpoints, nameValue, setError }) {
+function CharacterWrapper({ endpoints, nameValue, setError, addCharacter }) {
   const [classData, setClassData] = useState(null);
   const [race, setRace] = useState(null);
+  const [selectedClass, setSelectedClass] = useState('');
+
+  const newCharacter = {
+    class: selectedClass
+  };
 
   return (
-    <div>
-      {/* <fav button></fav> */}
+    <div className="character-wrapper">
+      <button
+        className="save-character"
+        onClick={() => addCharacter(newCharacter)}
+      >
+        Save Character
+      </button>
       <div className="upper-container">
         <div className="details">
           {race && <Alignment race={race} />}
@@ -34,13 +44,20 @@ function CharacterWrapper({ endpoints, nameValue, setError }) {
             setClassData={setClassData}
             endpoint={endpoints.classes}
             setError={setError}
+            setSelectedClass={setSelectedClass}
           />
         </div>
         <div className="details">
           {classData && <Equipment classData={classData} />}
           {race && <Proficiency race={race} classData={classData} />}
         </div>
-        <AbilityScores endpoint={endpoints['ability-scores']} setError={setError} />
+      </div>
+      <div className="lower-container">
+        <AbilityScores
+          className="ability-scores"
+          endpoint={endpoints["ability-scores"]}
+          setError={setError}
+        />
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import CharacterWrapper from "./Components/CharacterWrapper/CharacterWrapper";
 import HomeWrapper from "./Components/HomeWrapper/HomeWrapper";
 import "./App.css";
 import Error from "./Components/Error/Error";
+import SavedCharacters from "./Components/SavedCharacters/SavedCharacters";
 
 function App() {
   const [endpoints, setEndpoints] = useState();
@@ -14,6 +15,11 @@ function App() {
     hasError: false,
     message: "Oops try again Later",
   });
+  const [savedCharacters, setSavedCharacters] = useState([]);
+
+  const addCharacter = (character) => {
+    setSavedCharacters([...savedCharacters, character]);
+  }
 
   useEffect(() => {
     getPromise()
@@ -38,13 +44,6 @@ function App() {
     <main className="App">
       <Header />
       {error.hasError && <Navigate to="/*" />}
-      {/* {endpoints ? (
-        <>
-          <CharacterWrapper endpoints={endpoints} />
-        </>
-      ) : (
-        false
-      )} */}
       <Routes>
         <Route path="/" element={<HomeWrapper setNameValue={setNameValue} />} />
         <Route
@@ -54,10 +53,11 @@ function App() {
               endpoints={endpoints}
               nameValue={nameValue}
               setError={setError}
+              addCharacter={addCharacter}
             />
           }
         />
-        {/* <Route path="/favorites" /> */}
+        <Route path="/favorites" element={<SavedCharacters savedCharacters={savedCharacters} />} />
         <Route path="/*" element={<Error error={error} resetError={resetError} />} />
       </Routes>
     </main>

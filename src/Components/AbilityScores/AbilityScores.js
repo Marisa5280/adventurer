@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { getPromise } from "../../apiCalls";
+import './AbilityScores.css';
 
 function AbilityScores({ endpoint, setError }) {
   const [abilities, setAbilities] = useState([]);
