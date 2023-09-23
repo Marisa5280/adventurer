@@ -26,10 +26,10 @@ function App() {
         false
       )}
       <Routes>
-        <Route path="/" /> // *ADD ELELMENT HOME WRAPPER* //
+        {/* <Route path="/" /> // *ADD ELELMENT HOME WRAPPER* // */}
         {/* <Route path="/random" element={<CharacterWrapper endpoints={endpoints} />} /> */}
-        <Route path="/favorites" />  // *ADD ELELMENT FAVORITES WRAPPER* //
-        <Route path="/*" />  // *ADD ELELMENT ERROR COMP* //
+        {/* <Route path="/favorites" />  // *ADD ELELMENT FAVORITES WRAPPER* // */}
+        {/* <Route path="/*" />  // *ADD ELELMENT ERROR COMP* // */}
       </Routes>
     </main>
   );
