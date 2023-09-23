@@ -9,11 +9,12 @@ function Header() {
         <h1>Adventurer Alchemist</h1>
       </NavLink>
       <NavLink
+        className='favorite-nav'
         to="/favorites"
         style={{ color: `inherit`, textDecoration: `inherit` }}
       >
         <img src={DTwenty} alt="20 sided dice" />
-        <h3>My Characters</h3>
+        <h5>My Characters</h5>
       </NavLink>
     </header>
   );
