@@ -1,5 +1,6 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
+import DTwenty from "../../Images/D20.png";
 
 function Header() {
   return (
@@ -11,7 +12,8 @@ function Header() {
         to="/favorites"
         style={{ color: `inherit`, textDecoration: `inherit` }}
       >
-        My Characters
+        <img src={DTwenty} alt="20 sided dice" />
+        <h3>My Characters</h3>
       </NavLink>
     </header>
   );
