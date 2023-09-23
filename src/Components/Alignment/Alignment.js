@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 function Alignment({ race }) {
 
@@ -10,3 +11,7 @@ function Alignment({ race }) {
 }
 
 export default Alignment;
+
+Alignment.propTypes = {
+  "alignment":PropTypes.string
+}
