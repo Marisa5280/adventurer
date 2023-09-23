@@ -3,7 +3,7 @@ function Equipment({ classData }) {
   const startingEquipmentOptions = classData["starting_equipment_options"];
 
   return (
-    <div className="equipment-container">
+    <div className="equipment-container details-card">
       <h2 className="equipment-title">Equipment:</h2>
       <ul className="equipment-details">
         {startingEquipment?.map((equip) => (

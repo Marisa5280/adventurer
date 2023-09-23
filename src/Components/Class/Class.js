@@ -1,13 +1,20 @@
+import React, { useEffect } from "react";
+import { getPromise } from "../../apiCalls";
 
-function Class({ classData }) {
+function Class({ classData, setClassData, endpoint }) {
 
-  //class data props? : equipment
-  // .starting_equipment
-  // .starting_equipment_options.(forEach?)/(math.random),
-  // for each option: Math.floor(Math.random() * option.options.length)
-  //proficiencies
-  // proficiencies choices + proficiencies
-  return (
+  useEffect(() => {
+    getPromise(endpoint)
+      .then((data) => {
+        const randomIndex = Math.floor(Math.random() * data.results.length);
+        getPromise(data.results[randomIndex].url).then((currentClassData) => {
+          console.log("currentClassData", currentClassData);
+          setClassData(currentClassData);
+        });
+      });
+  }, []);
+
+  return classData && (
     <div className="class-container">
       <h2 className="class-title">Class: {classData.name}</h2>
       <ul className="class-details"></ul>

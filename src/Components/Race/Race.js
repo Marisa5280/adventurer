@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { getPromise } from "../../apiCalls";
 
-function Race({ race }) {
-  // const [raceEndpoint, setRaceEndpoint] = useState([]);
-  // const [race, setRace] = useState([]);
+function Race({ race, setRace, endpoint }) {
+  useEffect(() => {
+    getPromise(endpoint).then((data) => {
+      const randomIndex = Math.floor(Math.random() * data.results.length);
+      getPromise(data.results[randomIndex].url).then((currentRaceData) => {
+        console.log("currentRaceData", currentRaceData);
+        setRace(currentRaceData);
+      });
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   getPromise(endpoint).then((data) => {
-  //     const randomIndex = Math.floor(Math.random() * data.results.length);
-  //     console.log("races data:", data.results[randomIndex]);
-  //     setRaceEndpoint(data.results[randomIndex]);
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   getPromise(raceEndpoint.url).then((currentRaceData) => {
-  //     console.log("currentRaceData", currentRaceData);
-  //     setRace(currentRaceData);
-  //   });
-  // }, [raceEndpoint]);
-
-  return (
-    <div className="race-container">
+  return race && (
+    <div className="race-container details-card">
       <h2 className="race-title">Race: {race.name}</h2>
       <ul className="race-details">
         <li className="race-age">Age: {race.age}</li>
