@@ -2,7 +2,13 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { getPromise } from "../../apiCalls";
 
-function Class({ classData, setClassData, endpoint, setError }) {
+function Class({
+  classData,
+  setClassData,
+  endpoint,
+  setError,
+  setSelectedClass,
+}) {
   useEffect(() => {
     getPromise(endpoint)
       .then((data) => {
@@ -10,6 +16,7 @@ function Class({ classData, setClassData, endpoint, setError }) {
         getPromise(data.results[randomIndex].url).then((currentClassData) => {
           console.log("currentClassData", currentClassData);
           setClassData(currentClassData);
+          setSelectedClass(currentClassData.name);
         });
       })
       .catch((error) =>
