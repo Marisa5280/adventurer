@@ -7,17 +7,21 @@ import Alignment from "../Alignment/Alignment";
 import Proficiency from "../Proficiency/Proficiency";
 
 function CharacterWrapper({ endpoints }) {
-  const [classData, setClassData] = useState([]);
-  const [race, setRace] = useState([]);
+  const [classData, setClassData] = useState(null);
+  const [race, setRace] = useState(null);
 
   return (
     <div>
       {/* <fav button></fav> */}
       {race && <Alignment race={race} />}
-      {classData && <Class classData={classData} setClassData={setClassData} endpoint={endpoints.classes}/>}
+      <Class
+        classData={classData}
+        setClassData={setClassData}
+        endpoint={endpoints.classes}
+      />
       {classData && <Equipment classData={classData} />}
       {race && <Proficiency race={race} classData={classData} />}
-      {race && <Race race={race} setRace={setRace} endpoint={endpoints.races}/>}
+      <Race race={race} setRace={setRace} endpoint={endpoints.races} />
     </div>
   );
 }

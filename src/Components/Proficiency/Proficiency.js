@@ -1,5 +1,4 @@
-
-function Proficiency({ race, classData }) {
+function Proficiency({ classData }) {
   return (
     <div className="proficiency-container">
       <h2 className="proficiency-title">Proficiencies:</h2>
@@ -7,6 +6,11 @@ function Proficiency({ race, classData }) {
           <li key={proficiency.index}>{proficiency.name}</li>
         ))}
       </ul> */}
+      <ul>
+        {classData.proficiencies.map((proficiency) => (
+          <li key={proficiency.index}>{proficiency.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }

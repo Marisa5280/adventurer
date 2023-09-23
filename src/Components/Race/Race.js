@@ -12,7 +12,7 @@ function Race({ race, setRace, endpoint }) {
     });
   }, []);
 
-  return (
+  return race && (
     <div className="race-container">
       <h2 className="race-title">Race: {race.name}</h2>
       <ul className="race-details">

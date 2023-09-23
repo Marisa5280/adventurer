@@ -14,7 +14,7 @@ function Class({ classData, setClassData, endpoint }) {
       });
   }, []);
 
-  return (
+  return classData && (
     <div className="class-container">
       <h2 className="class-title">Class: {classData.name}</h2>
       <ul className="class-details"></ul>
