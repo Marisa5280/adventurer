@@ -22,7 +22,7 @@ function CharacterWrapper({ endpoints, nameValue }) {
           <Background endpoint={endpoints.backgrounds} />
         </div>
         <div className="class-container">
-        <p>Name: {nameValue}</p>
+        <p className="character-name">Name: {nameValue}</p>
           <Class
             classData={classData}
             setClassData={setClassData}

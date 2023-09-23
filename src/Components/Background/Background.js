@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import { getPromise } from "../../apiCalls";
 
 function Background({ endpoint }) {
@@ -28,3 +29,10 @@ function Background({ endpoint }) {
 }
 
 export default Background;
+
+Background.propTypes = {
+  feature: PropTypes.shape({
+    name: PropTypes.string,
+    desc: PropTypes.arrayOf(PropTypes.string)
+  })
+}
