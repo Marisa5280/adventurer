@@ -7,6 +7,7 @@ import Alignment from "../Alignment/Alignment";
 import Proficiency from "../Proficiency/Proficiency";
 import Background from "../Background/Background";
 import "./CharacterWrapper.css";
+import AbilityScores from "../AbilityScores/AbilityScores";
 
 function CharacterWrapper({ endpoints, nameValue, setError }) {
   const [classData, setClassData] = useState(null);
@@ -39,6 +40,7 @@ function CharacterWrapper({ endpoints, nameValue, setError }) {
           {classData && <Equipment classData={classData} />}
           {race && <Proficiency race={race} classData={classData} />}
         </div>
+        <AbilityScores endpoint={endpoints['ability-scores']}/>
       </div>
     </div>
   );
