@@ -13,7 +13,7 @@ function Race({ race, setRace, endpoint }) {
   }, []);
 
   return race && (
-    <div className="race-container">
+    <div className="race-container details-card">
       <h2 className="race-title">Race: {race.name}</h2>
       <ul className="race-details">
         <li className="race-age">Age: {race.age}</li>

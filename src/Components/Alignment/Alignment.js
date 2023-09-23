@@ -2,7 +2,7 @@
 function Alignment({ race }) {
 
   return (
-    <div className="alignment-container">
+    <div className="alignment-container details-card">
       <h2 className="alignment-title">Alignment:</h2>
       <p className="alignment-detail">{race.alignment}</p>
     </div>
