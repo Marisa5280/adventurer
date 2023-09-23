@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Equipment({ classData }) {
   const startingEquipment = classData["starting_equipment"];
   const startingEquipmentOptions = classData["starting_equipment_options"];
@@ -23,3 +25,8 @@ function Equipment({ classData }) {
 }
 
 export default Equipment;
+
+Equipment.propTypes = {
+  starting_equipment: PropTypes.arrayOf(PropTypes.object),
+  starting_equipment_options: PropTypes.arrayOf(PropTypes.object),
+};
