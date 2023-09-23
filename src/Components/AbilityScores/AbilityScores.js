@@ -22,33 +22,21 @@ function AbilityScores({ endpoint, setError }) {
   console.log("abilities res", abilities);
   const renderedAbilities = abilities.map((ability) => {
     const score = Math.floor(Math.random() * (15 + 1)) + 3;
-    
+
     return (
-      <div className="ability-card">
+      <div className="ability-card" key={ability.index}>
         <div className="ability-score">{score}</div>
         <h4>{ability.name}</h4>
       </div>
     );
   });
   return <div className="ability-scores">{renderedAbilities}</div>;
-  // return bgName && (
-  //   <div className="class-container details-card">
-  //     <h2 className="class-title">Background: {bgName}</h2>
-  //     <p>{bgDetails}</p>
-  //   </div>
-  // );
+ 
 }
 
 export default AbilityScores;
 
-// Background.propTypes = {
-//   feature: PropTypes.shape({
-//     name: PropTypes.string,
-//     desc: PropTypes.arrayOf(PropTypes.string)
-//   })
-// }
-
-// call api data,
-// iterate through (map)
-// each score: assign random num from 3-18,
-// for each => render jsx
+AbilityScores.propTypes = {
+  endpoint: PropTypes.string.isRequired,
+  setError: PropTypes.func.isRequired,
+};

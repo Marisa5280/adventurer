@@ -40,7 +40,7 @@ function CharacterWrapper({ endpoints, nameValue, setError }) {
           {classData && <Equipment classData={classData} />}
           {race && <Proficiency race={race} classData={classData} />}
         </div>
-        <AbilityScores endpoint={endpoints['ability-scores']}/>
+        <AbilityScores endpoint={endpoints['ability-scores']} setError={setError} />
       </div>
     </div>
   );
