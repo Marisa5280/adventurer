@@ -8,7 +8,7 @@ import Proficiency from "../Proficiency/Proficiency";
 import Background from "../Background/Background";
 import "./CharacterWrapper.css";
 
-function CharacterWrapper({ endpoints, nameValue }) {
+function CharacterWrapper({ endpoints, nameValue, setError }) {
   const [classData, setClassData] = useState(null);
   const [race, setRace] = useState(null);
 
@@ -18,15 +18,21 @@ function CharacterWrapper({ endpoints, nameValue }) {
       <div className="upper-container">
         <div className="details">
           {race && <Alignment race={race} />}
-          <Race race={race} setRace={setRace} endpoint={endpoints.races} />
-          <Background endpoint={endpoints.backgrounds} />
+          <Race
+            race={race}
+            setRace={setRace}
+            endpoint={endpoints.races}
+            setError={setError}
+          />
+          <Background endpoint={endpoints.backgrounds} setError={setError} />
         </div>
         <div className="class-container">
-        <p className="character-name">Name: {nameValue}</p>
+          <p className="character-name">Name: {nameValue}</p>
           <Class
             classData={classData}
             setClassData={setClassData}
             endpoint={endpoints.classes}
+            setError={setError}
           />
         </div>
         <div className="details">
