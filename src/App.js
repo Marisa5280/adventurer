@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getPromise } from "./apiCalls";
+import Header from "./Components/Header/Header";
 import CharacterWrapper from "./Components/CharacterWrapper/CharacterWrapper";
-import Race from "./Components/Race/Race";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [endpoints, setEndpoints] = useState();
@@ -16,9 +17,7 @@ function App() {
 
   return (
     <main className="App">
-      <header className="App-header">
-        <h1 className="title">Adventurer Alchemist</h1>
-      </header>
+      <Header />
       {endpoints ? (
         <>
           <CharacterWrapper endpoints={endpoints} />
@@ -26,6 +25,12 @@ function App() {
       ) : (
         false
       )}
+      <Routes>
+        {/* <Route path="/" /> // *ADD ELELMENT HOME WRAPPER* // */}
+        {/* <Route path="/random" element={<CharacterWrapper endpoints={endpoints} />} /> */}
+        {/* <Route path="/favorites" />  // *ADD ELELMENT FAVORITES WRAPPER* // */}
+        {/* <Route path="/*" />  // *ADD ELELMENT ERROR COMP* // */}
+      </Routes>
     </main>
   );
 }

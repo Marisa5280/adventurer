@@ -1,0 +1,34 @@
+header {
+  background-color:#A75203;
+  height: 11vh;
+  padding-left: 9vw;
+  padding-right: 9vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 22px;
+  color: black;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  -webkit-text-stroke: 1px #FCC400;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+h5 {
+  margin: 0%;
+}
+
+/* Media query for iPhones */
+@media (max-width: 768px) {
+  header {
+      font-size: 16px; 
+  }
+}
