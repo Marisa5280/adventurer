@@ -8,7 +8,7 @@ import Proficiency from "../Proficiency/Proficiency";
 import Background from "../Background/Background";
 import "./CharacterWrapper.css";
 
-function CharacterWrapper({ endpoints }) {
+function CharacterWrapper({ endpoints, nameValue }) {
   const [classData, setClassData] = useState(null);
   const [race, setRace] = useState(null);
 
@@ -22,6 +22,7 @@ function CharacterWrapper({ endpoints }) {
           <Background endpoint={endpoints.backgrounds} />
         </div>
         <div className="class-container">
+        <p>Name: {nameValue}</p>
           <Class
             classData={classData}
             setClassData={setClassData}

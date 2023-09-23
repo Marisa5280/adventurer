@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import { getPromise } from "./apiCalls";
 import Header from "./Components/Header/Header";
 import CharacterWrapper from "./Components/CharacterWrapper/CharacterWrapper";
+import HomeWrapper from "./Components/HomeWrapper/HomeWrapper";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [endpoints, setEndpoints] = useState();
+  const [nameValue, setNameValue] = useState("");
 
   useEffect(() => {
     getPromise().then((data) => {
@@ -18,16 +20,21 @@ function App() {
   return (
     <main className="App">
       <Header />
-      {endpoints ? (
+
+      {/* {endpoints ? (
         <>
           <CharacterWrapper endpoints={endpoints} />
         </>
       ) : (
         false
-      )}
+      )} */}
       <Routes>
-        {/* <Route path="/" /> // *ADD ELELMENT HOME WRAPPER* // */}
-        {/* <Route path="/random" element={<CharacterWrapper endpoints={endpoints} />} /> */}
+        <Route path="/" element={<HomeWrapper setNameValue={setNameValue}/>} /> // *ADD ELELMENT HOME
+        WRAPPER* //
+        <Route
+          path="/random"
+          element={<CharacterWrapper endpoints={endpoints} nameValue={nameValue}/>}
+        />
         {/* <Route path="/favorites" />  // *ADD ELELMENT FAVORITES WRAPPER* // */}
         {/* <Route path="/*" />  // *ADD ELELMENT ERROR COMP* // */}
       </Routes>
