@@ -14,14 +14,15 @@ function HomeWrapper({ setNameValue }) {
   };
 
   return (
-    <div className="App">
+    <div className="home-wrapper">
+      <h2 className="home-welcome">Welcome Adventurer</h2>
       <input
         type="text"
         placeholder="Enter Character Name"
         value={inputValue}
         onChange={handleInputChange}
       />
-      <NavLink to="/random" onClick={handleRandomCharacterClick}>Random Character</NavLink>
+      <NavLink className='random-button' to="/random" onClick={handleRandomCharacterClick}>Random Character</NavLink>
     </div>
   );
 }
