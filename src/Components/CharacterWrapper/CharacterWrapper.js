@@ -45,7 +45,7 @@ function CharacterWrapper({ endpoints, nameValue, setError, addCharacter }) {
             setError={setError}
             setSelectedClass={setSelectedClass}
           />
-          <Background endpoint={endpoints.backgrounds} setError={setError} />
+          <Background className='character-background' endpoint={endpoints.backgrounds} setError={setError} />
         </div>
         <div className="details">
           {classData && <Equipment classData={classData} />}

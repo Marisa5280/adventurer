@@ -26,8 +26,8 @@ function Background({ endpoint , setError}) {
   }, []);
 
   return bgName && (
-    <div className="class-container details-card">
-      <h2 className="class-title">Background: {bgName}</h2>
+    <div className="class-container character-background details-card">
+      <h2 className="background-title">Background: {bgName}</h2>
       <p>{bgDetails}</p>
     </div>
   );
