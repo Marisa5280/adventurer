@@ -12,10 +12,10 @@ import AbilityScores from "../AbilityScores/AbilityScores";
 function CharacterWrapper({ endpoints, nameValue, setError, addCharacter }) {
   const [classData, setClassData] = useState(null);
   const [race, setRace] = useState(null);
-  const [selectedClass, setSelectedClass] = useState('');
+  const [selectedClass, setSelectedClass] = useState("");
 
   const newCharacter = {
-    class: selectedClass
+    class: selectedClass,
   };
 
   return (
@@ -35,10 +35,9 @@ function CharacterWrapper({ endpoints, nameValue, setError, addCharacter }) {
             endpoint={endpoints.races}
             setError={setError}
           />
-          <Background endpoint={endpoints.backgrounds} setError={setError} />
         </div>
         <div className="class-container">
-          <p className="character-name">Name: {nameValue}</p>
+          <h2 className="character-name">Name: {nameValue}</h2>
           <Class
             classData={classData}
             setClassData={setClassData}
@@ -46,6 +45,7 @@ function CharacterWrapper({ endpoints, nameValue, setError, addCharacter }) {
             setError={setError}
             setSelectedClass={setSelectedClass}
           />
+          <Background endpoint={endpoints.backgrounds} setError={setError} />
         </div>
         <div className="details">
           {classData && <Equipment classData={classData} />}
