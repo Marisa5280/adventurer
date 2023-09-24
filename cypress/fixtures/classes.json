@@ -1,0 +1,15 @@
+{
+  "count": 2,
+  "results": [
+    {
+      "index": "barbarian",
+      "name": "Barbarian",
+      "url": "/api/classes/barbarian"
+    },
+    {
+      "index": "bard",
+      "name": "Bard",
+      "url": "/api/classes/bard"
+    }
+  ]
+}

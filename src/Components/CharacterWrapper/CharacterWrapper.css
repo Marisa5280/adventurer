@@ -7,7 +7,12 @@
 }
 
 .class-container {
-  width: 50%;
+  width: 40%;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .details {
@@ -29,4 +34,12 @@
 .lower-container {
   display: flex;
   flex-direction: row;
+}
+
+.save-character {
+  height: 3rem;
+  width: 15rem;
+  margin-top: 5rem;
+  background: #FCC400;
+  font-size: 1.75rem;
 }
