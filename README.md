@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Adventurer Alchemist - D&D Character Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Adventurer Alchemist, a Single Page Application (SPA) built with Create React App that allows you to generate randomized Dungeons & Dragons (D&D) characters using the DND5E API. This web app lets you create characters on the fly, save your favorite character sheets, and revisit them later.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Randomized Character Generation:** Click the "Generate Character" button to create a new, randomized D&D character. Explore various combinations of races, classes, and backgrounds.
 
-### `npm start`
+- **Save and View Character Sheets:** Save the characters you like by clicking the "Save Character" button. You can later view and revisit your saved character sheets.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Persistent Storage:** Your saved characters are stored locally, so even if you close the browser or come back later, your characters will still be available.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **End-to-End Testing with Cypress:** The application has been thoroughly tested using Cypress for end-to-end (E2E) testing to ensure a smooth user experience.
 
-### `npm test`
+## Screenshots
+![Screenshot 2023-09-25 at 3 27 35 PM](https://github.com/Marisa5280/adventurer/assets/126411245/6039b915-2677-4a67-ab44-a1f6dff55cfa)
+![Screenshot 2023-09-25 at 3 28 32 PM](https://github.com/Marisa5280/adventurer/assets/126411245/34e878bd-cfb2-4c2b-af3a-232a58964b86)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Make sure you have Node.js and npm installed on your machine.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+```bash
+git clone https://github.com/Marisa5280/adventurer-alchemist.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Navigate to the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+cd adventurer-alchemist
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+## Running the App Locally
+Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start
+```
 
-### Code Splitting
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Testing with Cypress
+To run Cypress tests:
 
-### Analyzing the Bundle Size
+```bash
+npm run cypress:open
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This will open the Cypress Test Runner. Click on the integration test file to run the tests.
 
-### Making a Progressive Web App
+## Deployment
+The app is deployed on Vercel and can be accessed at [https://adventurer-alchemist.vercel.app/](https://adventurer-alchemist.vercel.app/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
+This project is a solo endeavor, but contributions are welcome! Feel free to open issues or submit pull requests on the [GitHub repository](https://github.com/Marisa5280/adventurer-alchemist).
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+- [Marisa5280](https://github.com/Marisa5280)
